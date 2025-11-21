@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh '''
                     # Build the image locally on Jenkins
-                    docker build -t web-application:latest .
+                    docker build -t web-application:$BUILD_NUMBER .
                 '''
             }
         }
