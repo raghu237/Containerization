@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Build the image locally on Jenkins
-                    docker.build("$$ {ECR_REGISTRY}/ $${ECR_REPOSITORY}:${IMAGE_TAG}")
+                    docker.build("${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}")
                 }
             }
         }
