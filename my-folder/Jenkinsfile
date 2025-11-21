@@ -41,7 +41,7 @@ pipeline {
                 script {
                     withAWS(credentials: 'aws-ecr-creds', region: "${AWS_REGION}") {
                         docker.withRegistry("https://${ECR_REGISTRY}", 'aws-ecr-creds') {
-                            docker.image("$$ {ECR_REGISTRY}/ $${ECR_REPOSITORY}:${IMAGE_TAG}").push()
+                            docker.image("${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}").push()
                         }
                     }
                 }
@@ -50,7 +50,7 @@ pipeline {
 
         stage('Cleanup') {
             steps {
-                sh 'docker rmi $$ {ECR_REGISTRY}/ $${ECR_REPOSITORY}:${IMAGE_TAG}'  // Prune local image
+                sh 'docker rmi ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}'  // Prune local image
             }
         }
     }
