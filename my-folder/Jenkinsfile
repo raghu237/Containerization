@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         // ECR details (replace with yours)
-        ECR_REGISTRY = '123456789012.dkr.ecr.us-east-1.amazonaws.com'
-        ECR_REPOSITORY = 'my-microservice-v1'
+        ECR_REGISTRY = '832959959228.dkr.ecr.us-east-1.amazonaws.com/java-app'
+        ECR_REPOSITORY = 'java-app'
         IMAGE_TAG = "${BUILD_NUMBER}"  // Use Jenkins build number as tag
         AWS_REGION = 'us-east-1'
     }
