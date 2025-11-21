@@ -1,0 +1,5 @@
+HelloWorldApp/
+ ├── WEB-INF/
+ │    ├── web.xml
+ │    └── classes/
+ │         └── HelloServlet.class
