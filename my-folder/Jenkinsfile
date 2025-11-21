@@ -19,7 +19,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
-                    // Build the image locally on Jenkins
+                    # Build the image locally on Jenkins
                     docker build -t web-application:latest .
                 '''
             }
